@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5we-wf-xpD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="P2C-Aw-JQ0">
+            <objects>
+                <viewController id="5we-wf-xpD" customClass="SYMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FjL-DZ-WqB"/>
+                        <viewControllerLayoutGuide type="bottom" id="LfR-rN-DLk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DYO-OL-aS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KDo-ho-vSL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.81915357766143104" green="0.81915357766143104" blue="0.81915357766143104" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2XJ-fn-2Qg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5we-wf-xpD" id="gth-Yk-BRY"/>
+                                    <outlet property="delegate" destination="5we-wf-xpD" id="svK-4g-ggQ"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVV-bq-MSj" customClass="SDCycleScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="m06-1A-b7U"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxt-ic-6uY">
+                                <rect key="frame" x="0.0" y="180" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2do-JP-ezY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KDo-ho-vSL" secondAttribute="trailing" id="3cl-iB-jSm"/>
+                            <constraint firstItem="KDo-ho-vSL" firstAttribute="leading" secondItem="DYO-OL-aS3" secondAttribute="leading" id="54t-KA-l9j"/>
+                            <constraint firstAttribute="trailing" secondItem="PVV-bq-MSj" secondAttribute="trailing" id="7sq-mh-w1b"/>
+                            <constraint firstItem="Fxt-ic-6uY" firstAttribute="top" secondItem="PVV-bq-MSj" secondAttribute="bottom" id="9d0-hR-iJa"/>
+                            <constraint firstItem="LfR-rN-DLk" firstAttribute="top" secondItem="KDo-ho-vSL" secondAttribute="bottom" id="9px-4j-jO5"/>
+                            <constraint firstItem="KDo-ho-vSL" firstAttribute="top" secondItem="DYO-OL-aS3" secondAttribute="top" id="EEu-67-VkE"/>
+                            <constraint firstItem="Fxt-ic-6uY" firstAttribute="leading" secondItem="DYO-OL-aS3" secondAttribute="leading" id="Qs6-Lm-cwq"/>
+                            <constraint firstItem="PVV-bq-MSj" firstAttribute="leading" secondItem="DYO-OL-aS3" secondAttribute="leading" id="Sh4-ZV-t2k"/>
+                            <constraint firstItem="PVV-bq-MSj" firstAttribute="top" secondItem="DYO-OL-aS3" secondAttribute="top" id="iZT-He-4yK"/>
+                            <constraint firstAttribute="trailing" secondItem="Fxt-ic-6uY" secondAttribute="trailing" id="rnO-DL-xXj"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="calendarView" destination="Fxt-ic-6uY" id="hxm-1c-eEu"/>
+                        <outlet property="collectionView" destination="KDo-ho-vSL" id="eaL-2P-3Yt"/>
+                        <outlet property="cycleView" destination="PVV-bq-MSj" id="Dpg-qi-hJZ"/>
+                        <outlet property="cycleViewHeight" destination="m06-1A-b7U" id="F81-hy-u8M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Gx-h5-M4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142.5" y="149.5"/>
+        </scene>
+    </scenes>
+</document>

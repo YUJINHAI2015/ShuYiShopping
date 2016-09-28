@@ -1,0 +1,199 @@
+//
+//  ShuYiWenHua.pch
+//  ShuYiWenHua
+//
+//  Created by yiLian on 16/9/12.
+//  Copyright © 2016年 shuyi. All rights reserved.
+//
+
+#ifndef ShuYiWenHua_pch
+#define ShuYiWenHua_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+/***
+ ==============
+ 应用配置
+ ==============
+ ***/
+#import "AppDelegate.h"
+//#import "MJRefresh.h"
+#import "ComData.h"
+#import "AlertUtils.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "BUIView.h"
+#import "BUIControl.h"
+#import "SYBaseViewController.h"
+//#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIColor+ZSLAdd.h"
+#import "Macro.h"
+
+//APP配置目录
+#define APP_CONFIG_PATH @"app_config.plist"
+
+//==============一系列key===========
+#define APP_KEY_UMENG @"53c8ca1656240b0cf601ae50"//友盟key
+#define APP_KEY_WEIXIN    @"wx15cdb64ff53cc8de"
+#define APP_KEY_TENCENTQQ  @"100552265"//qqKEY
+#define APP_KEY_SINA @"1986586111"
+#define APP_KEY_CHINABANK   @"22903805"                              //网银在线商家号
+#define APP_SECRET_CHINABANK  @"tailinziben@chinabank_2014"          //网银在线密钥
+#define APP_KEY_WEINXIN_APPSECRET @"1228f006e65676ea0949b8d60381cf42"
+
+
+
+//===============主机列表=================
+#define APP_HOST_ADDRESS @"http://android.vccore.com/weishi"
+#define APP_HOST [NSString stringWithFormat:@"%@%@",APP_HOST_ADDRESS,@""]      //服务器地址
+#define APP_HOST_REGISTER_TERM         @""
+#define APP_HOST_LOAN_TERM             @""
+#define APP_HOST_Image @"http://14.18.248.251:8080/imgfile/"
+#define APP_HOST_ImageADDRESS [NSString stringWithFormat:@"%@%@",APP_HOST_Image,@""]//大图服务器地址
+#define APP_HOST_ThumbImageADDRESS [NSString stringWithFormat:@"%@%@",APP_HOST_Image,@"thumb/"]//小图服务器地址
+
+//图片参数
+#define SMALL_IMAGE_WIDTH_CHAT       198
+#define SMALL_IMAGE_HEIGHT_CHAT      198
+#define BIG_IMAGE_WIDTH              640
+#define BIG_IMAGE_HEIGHT_40          1136
+#define BIG_IMAGE_HEIGHT_35          960
+#define BIG_IMAGE_WIDTH_40           1136
+#define BIG_IMAGE_WIDTH_35           960
+#define BIG_IMAGE_VERTIACL_WIDTH     640
+#define BIG_IMAGE_VERTIACL_HEIGHT_40 1136
+#define BIG_IMAGE_VERTIACL_HEIGHT_35 960
+#define PIC_BYTES                    102400.0//图片数据系数 1kb
+
+//手机验证码重发时长
+#define VCODE_TIME                    60;
+//图片轮播时间
+#define SWITCH_FOCUS_PICTURE_INTERVAL 3.0
+//设置手势密码开启时间(秒)
+#define GESTUREOPENTIME               300
+
+//http超时时间
+#define TIME_OUT_SECOND               30.0
+#define IMG_UPLOAD_TIME_OUT_SECOND    60.0
+//http状态码
+#define     STATUS_CODE_ERROR   1
+#define     STATUS_CODE_SUCCESS 2000000
+//开始从网络加载内容条数
+#define LOAN_FIRST_FORM_NETWORK       @"10"
+//从网络加载读取内容条数
+#define LOAD_MORE_FROM_NETWORK        @"-10"
+
+//默认头像
+#define DEFAULT_HEADIMAGE @"user_default"
+#define DEFAULT_BIGIMAGE @"default_picture_crossbeam.png"
+
+//默认图片
+#define DEFAULTPIC @"default_picture_crossbeam.png"
+//密码位数
+#define MAX_LEN_OF_PWD                16
+#define MIN_LEN_OF_PWD                6
+
+/***
+ ==============
+ 宏定义
+ ==============
+ ***/
+//日志
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define debugLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#define NSLog(...){}
+#endif
+
+/***
+ ==============
+ 配置key相关
+ ==============
+ ***/
+//当前主题
+#define APPConfigKeyCurrentTheme        @"APPConfigKeyCurrentTheme"
+//网络状态
+#define APPConfigKeyNetworkStatu        @"APPConfigKeyNetworkStatu"
+//登录手势
+#define APPConfigKeyLoginGesture        @"APPConfigKeyLoginGesture"
+//登录手势剩余次数
+#define APPConfigKeyLoginGestureCount   @"APPConfigKeyLoginGestureCount"
+//记录进入后台的时间点 用来判断离开应用的时间。
+#define APPConfigKeyEnterBackgroundTime @"APPConfigKeyEnterBackgroundTime"
+
+//返回码
+#define NO_NETWORK_STATUS               @"997"
+#define ERROR_TIME_OUT_STATUS           @"998"
+#define ERROR_SESSION_TIME_OUT_STATUS   @"-998"
+#define ERROR_MSG_SERVICE_STATUS        @"-999"
+
+//错误提示
+#define NO_NETWORK                  @"网络异常，请检查网络状况"
+#define ERROR_TIME_OUT              @"连接超时，请稍后再试。"
+#define ERROR_SESSION_TIME_OUT      @"session超时"
+#define ERROR_MSG_SERVICE           @"登录超时，请重新登录"
+
+//获取缓存
+#define userDefaults [NSUserDefaults standardUserDefaults]
+
+//返回信息
+#define KEY_STATUS_CODE @"status"
+#define KEY_MSG         @"msg"
+
+
+/*********************************** 设备/版本定义 ***********************************/
+
+//是否为IOS7及以上
+#define IOS7ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f ? YES : NO)
+
+#define IOS8ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0f ? YES : NO)
+//是否为Iphone4
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+//是否为Iphone5
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+//是否为iPhone6
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//是否为iPhone6 Plus
+#define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242,2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define UIColorFromRGB(rgbValue) UIColorFromRGBWithAlpha(rgbValue, 1.0f)
+#define UIColorFromRGBWithAlpha(rgbValue, alpha1) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alpha1]
+
+
+//颜色
+#define colorRed [UIColor redColor];
+#define colorWhite [UIColor whiteColor];
+#define colorWhite [UIColor whiteColor];
+#define colorBlue [UIColor blueColor];
+#define colorGightGray [UIColor lightGrayColor];
+#define colorGray [UIColor redColor];
+//字体 细体
+//细体
+#define System_Nine [UIFont systemFontOfSize:9+2]
+#define System_Ten [UIFont systemFontOfSize:10+2]
+#define System_Eleven [UIFont systemFontOfSize:11+2]
+#define System_Twelve [UIFont systemFontOfSize:12+2]
+#define System_Thirteen [UIFont systemFontOfSize:13+2]
+#define System_Fourteen [UIFont systemFontOfSize:14+2]
+#define System_Fifteen [UIFont systemFontOfSize:15+2]
+#define System_Sixteen [UIFont systemFontOfSize:16+2]
+#define System_Seventeen [UIFont systemFontOfSize:17+2]
+#define System_Eighteen [UIFont systemFontOfSize:18+2]
+#define System_Nineteen [UIFont systemFontOfSize:19+2]
+#define System_Twenty [UIFont systemFontOfSize:20+2]
+#define System_Twenty_one [UIFont systemFontOfSize:21+2]
+#define System_Twenty_two [UIFont systemFontOfSize:22+2]
+#define System_Twenty_three [UIFont systemFontOfSize:23+2]
+#define System_Twenty_four [UIFont systemFontOfSize:24+2]
+
+#define     SCREEN_W            [UIScreen mainScreen].bounds.size.width//屏幕宽度
+#define     SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height//屏幕高度
+#define     SCREEN_H            (7.0 > IOS_VERSION ? (SCREEN_HEIGHT-20): SCREEN_HEIGHT)//兼容ios6,7的屏幕高度
+
+#endif /* ShuYiWenHua_pch */
