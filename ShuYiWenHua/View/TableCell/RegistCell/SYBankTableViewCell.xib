@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="SYBankTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所属银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMS-Ro-BYG">
+                        <rect key="frame" x="18" y="8" width="60" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-tE-NY2">
+                        <rect key="frame" x="88" y="13" width="214" height="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="交通银行">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="bankAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Szx-Wm-uHi"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downLowList.png" translatesAutoresizingMaskIntoConstraints="NO" id="5UN-yl-Szf">
+                        <rect key="frame" x="272" y="22" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="tyS-ov-F15"/>
+                            <constraint firstAttribute="height" constant="15" id="wcB-uh-nLg"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mg5-tE-NY2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="6UV-Wk-dgd"/>
+                    <constraint firstItem="JMS-Ro-BYG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="A0S-Xc-8HR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="mg5-tE-NY2" secondAttribute="bottom" constant="5" id="FTG-Nc-Uzu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5UN-yl-Szf" secondAttribute="trailing" constant="25" id="W4l-e9-hAB"/>
+                    <constraint firstItem="5UN-yl-Szf" firstAttribute="centerY" secondItem="mg5-tE-NY2" secondAttribute="centerY" id="Z4R-iL-urF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="JMS-Ro-BYG" secondAttribute="bottom" id="aHq-nR-wJI"/>
+                    <constraint firstItem="JMS-Ro-BYG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="cWc-RT-BVa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mg5-tE-NY2" secondAttribute="trailing" constant="10" id="diK-V5-ndh"/>
+                    <constraint firstItem="mg5-tE-NY2" firstAttribute="leading" secondItem="JMS-Ro-BYG" secondAttribute="trailing" constant="10" id="uSB-2r-fj5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bankBtn" destination="mg5-tE-NY2" id="jxk-DR-ci7"/>
+            </connections>
+            <point key="canvasLocation" x="352" y="391"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="downLowList.png" width="15" height="15"/>
+    </resources>
+</document>

@@ -12,24 +12,147 @@
 #import "SYCalendar.h"
 #import "SYBaseNavigationViewController.h"
 #import "SYSearchViewController.h"
+#import "UIViewController+MMDrawerController.h"
+#import "SYRegistViewController.h"
+#import "SYShopRecordViewController.h"
+#import "SYShoppingListViewController.h"
+#import <SMPageControl/SMPageControl.h>
+#import <EAIntroView.h>
+#import "SYLoginViewController.h"
+#import "WSSearchTextField.h"
+#import "SYSubmitOrderViewController.h"
+static NSString * const sampleDescription1 = @"没有人比我们更专业";
+static NSString * const sampleDescription2 = @"没有人比我们更便捷";
+static NSString * const sampleDescription3 = @"Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.";
+static NSString * const sampleDescription4 = @"Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.";
 static NSString * const CellReuseIdentify = @"CellReuseIdentify";
 
-@interface SYMainViewController () <SDCycleScrollViewDelegate,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface SYMainViewController () <SDCycleScrollViewDelegate,UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,EAIntroDelegate>
+
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleView;
-@property (nonatomic, strong) UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cycleViewHeight;
 @property (weak, nonatomic) IBOutlet UIView *calendarView;
-@property (strong, nonatomic) NSString *searchString;
-
+@property (strong, nonatomic) NSArray *mainIconArr;
+@property (nonatomic, strong) UIView *rootView;
+@property (nonatomic, strong) EAIntroView *intro;
 @end
 
+
 @implementation SYMainViewController
+- (NSArray *)mainIconArr{
+    if (!_mainIconArr) {
+        _mainIconArr = @[
+                             @{@"imageName":@"sy_main_regist",
+                               @"titleName":@"学员注册"
+                               },
+                             @{@"imageName":@"sy_main_order",
+                               @"titleName":@"订单管理"
+                               },
+                             @{@"imageName":@"sy_main_personalMessage",
+                               @"titleName":@"个人信息"
+                               },
+                             @{@"imageName":@"sy_main_icon_pay",
+                               @"titleName":@"在线充值"
+                               },
+                             @{@"imageName":@"sy_main_studyPrise",
+                               @"titleName":@"学习奖金"
+                               },
+                             @{@"imageName":@"sy_main_activity",
+                               @"titleName":@"社区论坛"
+                               }
+                             ];
+    }
+    return _mainIconArr;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    // 一个唯一标示 strFlag
+    NSString* strFlag = [NSString stringWithFormat:@"isFirstStartWithVersion_%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]];
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:strFlag] isEqualToString:@"YES"]) {
+        
+        
+    }else{
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:strFlag]; // 一进来先到这里，只加载一次。
+        // 引导页
+        self.rootView = self.navigationController.view;
+        [self showCustomIntro];
+        self.tabBarController.tabBar.hidden = YES;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.NavLeftBtn.hidden = YES;
     [self initUI];
+//    [self setAutomaticallyAdjustsScrollViewInsets:YES];
+//    [self setExtendedLayoutIncludesOpaqueBars:YES];
 }
+#pragma mark - 引导页
+- (void)showCustomIntro {
+    
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"专业化运营服务平台";
+    page1.titlePositionY = 240;
+    page1.desc = sampleDescription1;
+    page1.descPositionY = 220;
+    page1.bgImage = [UIImage imageNamed:@"bg1"];
+    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title1"]];
+    page1.titleIconPositionY = 100;
+    page1.showTitleView = NO;
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"便捷安全的支付方式";
+    page2.titlePositionY = 240;
+    page2.desc = sampleDescription2;
+    page2.descPositionY = 220;
+    page2.bgImage = [UIImage imageNamed:@"bg2"];
+    page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon1"]];
+    page2.titleIconPositionY = 260;
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"This is page 3";
+    page3.titlePositionY = 240;
+    page3.desc = sampleDescription3;
+    page3.descPositionY = 220;
+    page3.bgImage = [UIImage imageNamed:@"bg3"];
+    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon2"]];
+    page3.titleIconPositionY = 260;
+    
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.title = @"全新APP正式上线";
+    page4.titlePositionY = 240;
+    page4.desc = sampleDescription4;
+    page4.descPositionY = 220;
+    page4.bgImage = [UIImage imageNamed:@"bg4"];
+    page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon3"]];
+    page4.titleIconPositionY = 260;
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.rootView.bounds andPages:@[page1,page2,page3,page4]];
+    intro.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bigLogo"]];
+    intro.titleViewY = 120;
+    intro.tapToNext = YES;
+    [intro setDelegate:self];
+    
+    SMPageControl *pageControl = [[SMPageControl alloc] init];
+    pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot"];
+    pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"selectedPageDot"];
+    [pageControl sizeToFit];
+    intro.pageControl = (UIPageControl *)pageControl;
+    intro.pageControlY = 130.f;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundImage:[UIImage imageNamed:@"skipButton"] forState:UIControlStateNormal];
+    [btn setFrame:CGRectMake(0, 0, 270, 50)];
+    intro.skipButton = btn;
+    intro.skipButtonY = 80.f;
+    intro.skipButtonAlignment = EAViewAlignmentCenter;
+    [intro showInView:self.rootView animateDuration:0.3];
+}
+- (void)introDidFinish:(EAIntroView *)introView wasSkipped:(BOOL)wasSkipped{
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 #pragma mark - UI
 - (void)initUI
 {
@@ -71,41 +194,36 @@ static NSString * const CellReuseIdentify = @"CellReuseIdentify";
 {
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"ws_calender_today"] forState:UIControlStateNormal];
+    [rightButton setImage:[UIImage imageNamed:@"sy_main_right"] forState:UIControlStateNormal];
     [rightButton setFrame:CGRectMake(0, 0, 44, 44)];
         [rightButton addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
     
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftButton setImage:[UIImage imageNamed:@"ws_calender_today"] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"sy_main_left"] forState:UIControlStateNormal];
     [leftButton setFrame:CGRectMake(0, 0, 44, 44)];
     [leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
-    searchBar.delegate = self;
-    [searchBar setContentMode:UIViewContentModeLeft];
-    [searchBar setPlaceholder:@"搜索"];
-    searchBar.layer.cornerRadius=15;
-    searchBar.layer.masksToBounds=TRUE;
-    [searchBar sizeToFit];
-    [searchBar setTintColor:[UIColor whiteColor]];
-    self.searchBar = searchBar;
-    self.navigationItem.titleView = searchBar;
+    WSSearchTextField *search = [[WSSearchTextField alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
+    search.delegate = self;
+    self.navigationItem.titleView = search;
 }
 - (void)rightButtonClick:(UIButton *)btn{
     NSLog(@"rightButtonClick");
+    
 }
 - (void)leftButtonClick:(UIButton *)btn{
     NSLog(@"leftButtonClick");
-}
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 
-#pragma mark UISearchBarDelegate
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+}
+#pragma mark - textFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     [self goToSearchVC];
-    return NO;
+    return YES;
 }
 -(void)goToSearchVC{
     SYSearchViewController *vc=[[SYSearchViewController alloc] init];
@@ -146,7 +264,6 @@ static NSString * const CellReuseIdentify = @"CellReuseIdentify";
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    [self.searchBar resignFirstResponder];
     NSLog(@"%ld",(long)index);
 }
 
@@ -156,12 +273,12 @@ static NSString * const CellReuseIdentify = @"CellReuseIdentify";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 6;
+    return self.mainIconArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CollectionViewCell *cell = (CollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellReuseIdentify forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    [cell setdict:self.mainIconArr[indexPath.row]];
     return cell;
 }
 #pragma mark - UICollectonViewDelegate
@@ -176,6 +293,38 @@ static NSString * const CellReuseIdentify = @"CellReuseIdentify";
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%d",indexPath.row);
+    switch (indexPath.row) {
+        case 0:
+            [self pushAntherController:NSStringFromClass([SYRegistViewController class])];
+            break;
+        case 1:
+            [self pushAntherController:NSStringFromClass([SYShopRecordViewController class])];
+            break;
+        case 2:
+            [self pushAntherController:NSStringFromClass([SYShoppingListViewController class])];
+            break;
+        case 3:
+            [self pushAntherController:NSStringFromClass([SYLoginViewController class])];
+            break;
+        case 4:
+            [self pushAntherController:NSStringFromClass([SYSubmitOrderViewController class])];
+            break;
+        case 5:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
+- (void)pushAntherController:(NSString *)controller {
+    
+    Class myClass = NSClassFromString(controller);
+    if (myClass) {
+        UIViewController *myClassInit = [[myClass alloc] init];
+        myClassInit.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:myClassInit animated:YES];
+    }
 
+}
 @end

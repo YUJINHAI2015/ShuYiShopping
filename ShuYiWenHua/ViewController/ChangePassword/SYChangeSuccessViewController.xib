@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SYChangeSuccessViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buR-RB-iIh">
+                    <rect key="frame" x="137" y="30" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="3fj-Cw-Pro"/>
+                        <constraint firstAttribute="height" constant="100" id="uXE-fg-JcM"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜你修改密码成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxc-JA-Gp8">
+                    <rect key="frame" x="30" y="160" width="315" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <color key="textColor" red="0.94509803921568625" green="0.39215686274509803" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XV1-d8-UpX">
+                    <rect key="frame" x="20" y="573" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.21176470588235294" green="0.38039215686274508" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="P93-DE-onO"/>
+                    </constraints>
+                    <state key="normal" title="点击重新登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="buR-RB-iIh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="2wW-2E-gfd"/>
+                <constraint firstItem="bxc-JA-Gp8" firstAttribute="top" secondItem="buR-RB-iIh" secondAttribute="bottom" constant="30" id="FBS-w0-5sa"/>
+                <constraint firstItem="buR-RB-iIh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="USP-JW-7Id"/>
+                <constraint firstAttribute="bottom" secondItem="XV1-d8-UpX" secondAttribute="bottom" constant="50" id="is5-LF-xMQ"/>
+                <constraint firstAttribute="trailing" secondItem="XV1-d8-UpX" secondAttribute="trailing" constant="20" id="neB-Lf-L1K"/>
+                <constraint firstItem="XV1-d8-UpX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="tSe-f4-7S2"/>
+                <constraint firstItem="bxc-JA-Gp8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yKJ-mL-4zk"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="374.5" y="371.5"/>
+        </view>
+    </objects>
+</document>

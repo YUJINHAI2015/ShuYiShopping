@@ -37,6 +37,7 @@
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    [self.drawerController setMaximumLeftDrawerWidth:250.0];
     
     UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     window.rootViewController = self.drawerController;

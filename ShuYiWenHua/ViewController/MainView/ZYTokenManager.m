@@ -25,7 +25,7 @@
     // NSArray --> NSMutableArray
     NSMutableArray *searTXT = [myArray mutableCopy];
     [searTXT addObject:seaTxt];
-    if(searTXT.count > 5)
+    if(searTXT.count > 10)
     {
         [searTXT removeObjectAtIndex:0];
     }

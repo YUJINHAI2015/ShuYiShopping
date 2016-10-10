@@ -23,7 +23,7 @@ target 'ShuYiWenHua' do
     pod 'EAIntroView', '~> 2.9.0'
     pod 'SMPageControl', '~> 1.2'
     #pod 'UITableView+FDTemplateLayoutCell', '~> 1.4'
-    #pod 'MJRefresh', '~> 3.1'
+    pod 'MJRefresh', '~> 3.1'
     pod 'SDWebImage', '~> 3.7.1'
     #pod 'TPKeyboardAvoiding', '~> 1.2.9'
     #pod 'DZNEmptyDataSet', '~> 1.7'

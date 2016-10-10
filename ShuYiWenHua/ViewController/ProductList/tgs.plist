@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>组-11</string>
+		<key>shopName</key>
+		<string>充值</string>
+		<key>shopType</key>
+		<string>1111</string>
+		<key>shopPrice</key>
+		<string>10000</string>
+		<key>pvPrice</key>
+		<string>1111</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>组-12</string>
+		<key>shopName</key>
+		<string>钱包</string>
+		<key>shopType</key>
+		<string>2222</string>
+		<key>shopPrice</key>
+		<string>2222</string>
+		<key>pvPrice</key>
+		<string>1111</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>组-13</string>
+		<key>shopName</key>
+		<string>消息</string>
+		<key>shopType</key>
+		<string>3333</string>
+		<key>shopPrice</key>
+		<string>3333</string>
+		<key>pvPrice</key>
+		<string>1111</string>
+	</dict>
+</array>
+</plist>

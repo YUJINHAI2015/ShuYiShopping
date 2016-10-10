@@ -60,12 +60,15 @@
  */
 //字体雅黑
 #define YAHEI_FONT(X) [UIFont fontWithName:@"MicrosoftYaHei" size:X]
+// 字体大小
+#define GLOBAL_FONTSIZE 14
 
 //View的操作
 #define ViewWidth(v)                        v.frame.size.width
 #define ViewHeight(v)                       v.frame.size.height
 #define ViewX(v)                            v.frame.origin.x
 #define ViewY(v)                            v.frame.origin.y
+
 
 //图片加载
 #define ImageNamed(name) [UIImage imageWithContentsOfFile:[ResourcePath stringByAppendingPathComponent:name]]

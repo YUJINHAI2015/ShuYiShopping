@@ -82,6 +82,7 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MBProgressHUD+BWMExtension/Example/MBProgressHUD+BWMExtension/MBProgressHUD+BWMExtension.xcassets"
+  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "SSKeychain/Support/SSKeychain.bundle"
   install_resource "UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/UMSocialSDKResourcesNew.bundle"
   install_resource "UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle"
@@ -101,6 +102,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "MBProgressHUD+BWMExtension/Example/MBProgressHUD+BWMExtension/MBProgressHUD+BWMExtension.xcassets"
+  install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "SSKeychain/Support/SSKeychain.bundle"
   install_resource "UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_5.0/UMSocialSDKResourcesNew.bundle"
   install_resource "UMengSocial/Umeng_SDK_Social_iOS_ARM64_5.0/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle"

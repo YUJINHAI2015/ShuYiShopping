@@ -228,6 +228,7 @@ withCompletionHandler:(void (^)(NSInteger buttonIndex))completionHandler
     [button setTitle:title forState:UIControlStateHighlighted];
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = 4;
+    button.titleLabel.font = [UIFont systemFontOfSize: 15.0];
     
     return button;
 }

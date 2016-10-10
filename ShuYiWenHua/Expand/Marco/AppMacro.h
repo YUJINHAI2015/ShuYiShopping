@@ -38,7 +38,6 @@
 //屏幕大小
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-
 // 自动适配宽度,width为原始iPhone4/5的宽度
 #define AUTO_MATE_WIDTH(width) ((width) * SCREEN_WIDTH / 320.0)
 #define AUTO_MATE_HEIGHT(height) ((height) * SCREEN_HEIGHT / 480.0)

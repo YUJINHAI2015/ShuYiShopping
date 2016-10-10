@@ -8,12 +8,13 @@
 
 #import "SYSearchViewController.h"
 #import "ZYTokenManager.h"
+#import "WSSearchTextField.h"
 #define fontCOLOR [UIColor colorWithRed:163/255.0f green:163/255.0f blue:163/255.0f alpha:1]
 
-@interface SYSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+@interface SYSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic,strong)NSMutableArray * searchHistory;
-@property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) WSSearchTextField *searchBar;
 @property (nonatomic,strong) NSArray *myArray;//搜索记录的数组
 @property (nonatomic, assign) BOOL isSelectTableView;
 @end
@@ -30,21 +31,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    
+//    [self setAutomaticallyAdjustsScrollViewInsets:YES];
+//    [self setExtendedLayoutIncludesOpaqueBars:YES];
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.searchBar resignFirstResponder];
+
 }
 - (void)initUI{
+    [self HiddenCellLine:self.myTableView];
     self.NavLeftBtn.hidden = YES;
-    self.myTableView.tableFooterView = [UIView new];
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
-    searchBar.delegate = self;
-    [searchBar setPlaceholder:@"搜索"];
-    searchBar.layer.cornerRadius=15;
-    searchBar.layer.masksToBounds=TRUE;
-    [searchBar sizeToFit];
-    [searchBar setTintColor:[UIColor grayColor]];
-    self.searchBar = searchBar;
-    self.navigationItem.titleView = searchBar;
+    WSSearchTextField *search = [[WSSearchTextField alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
+    search.delegate = self;
+    self.searchBar = search;
+    [self.searchBar setReturnKeyType:UIReturnKeySearch];
+    self.navigationItem.titleView = search;
     
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -62,18 +64,17 @@
 - (void)rightButtonClick:(UIButton *)btn{
     [self dismissViewControllerAnimated:NO completion:nil];
 }
-#pragma mark - searchDelegate
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    
-    if (searchBar.text.length > 0) {
+#pragma mark - textFieldDelegate
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.text.length > 0) {
         // 执行跳转语句
-        NSLog(@"%@",searchBar.text);
+        NSLog(@"%@",textField.text);
         if (self.isSelectTableView) {
             self.isSelectTableView = NO;
             return ;
         }
-        [ZYTokenManager SearchText:searchBar.text];//缓存搜索记录
-//        [self readNSUserDefaults];
+        [ZYTokenManager SearchText:textField.text];//缓存搜索记录
+        //        [self readNSUserDefaults];
     }else{
         NSLog(@"请输入查找内容");
     }

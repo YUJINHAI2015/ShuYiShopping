@@ -2,12 +2,12 @@
 //  SYLoginViewController.h
 //  ShuYiWenHua
 //
-//  Created by yiLian on 16/9/22.
+//  Created by yiLian on 16/9/30.
 //  Copyright © 2016年 shuyi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SYMainViewController.h"
 
-@interface SYLoginViewController : UIViewController
+@interface SYLoginViewController : SYBaseViewController
 
 @end

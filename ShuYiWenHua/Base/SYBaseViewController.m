@@ -73,7 +73,7 @@
 {
     UIView *view = [UIView new];
     
-    view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    view.backgroundColor = [UIColor zsl_TableViewBackGroundColor];
     
     [tableView setTableFooterView:view];
 }
@@ -82,7 +82,7 @@
 -(void)InitNavigation{
     
     self.NavLeftBtn = [UIButton buttonWithImage:@""];
-    [self.NavLeftBtn setImage:[UIImage imageNamed:@"ws_nav_back"] forState:UIControlStateNormal];
+    [self.NavLeftBtn setImage:[UIImage imageNamed:@"sy_back"] forState:UIControlStateNormal];
     [self.navigationItem setLeftBarButtonItem:[[[UIBarButtonItem alloc] init] initWithCustomView:self.NavLeftBtn]];
     [self.NavLeftBtn  setFrame:CGRectMake(0, 0, 44, 44)];
     [self.NavLeftBtn handleControlEvent:UIControlEventTouchDown withBlock:^(id sender) {

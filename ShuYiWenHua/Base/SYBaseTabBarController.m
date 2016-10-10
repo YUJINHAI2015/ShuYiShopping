@@ -12,8 +12,6 @@
 
 #import "SYMainViewController.h"
 #import "WSContactsViewController.h"
-#import "WSToolViewController.h"
-#import "WSCalendarViewController.h"
 #import "WSFindViewController.h"
 
 
@@ -28,8 +26,8 @@
     
     NSMutableArray <SYBaseNavigationViewController *>*viewControllers = @[].mutableCopy;
     
-    NSArray *tabbarNormalImage = @[@"ws_tabbar_message_nor",@"ws_tabbar_adressList_nor",@"ws_tabbar_calendar_nor"];
-    NSArray *tabBarSeleteImage = @[@"ws_tabbar_message_sel",@"ws_tabbar_adressList_sel",@"ws_tabbar_discover_sel"];
+    NSArray *tabbarNormalImage = @[@"sy_main_icon_normal",@"sy_message_icon_normal",@"sy_me_icon_normal"];
+    NSArray *tabBarSeleteImage = @[@"sy_main_icon_selected",@"sy_message_icon_selected",@"sy_me_icon_selected"];
     // NSStringFromClass返回该类的名字
     NSArray *VCClassArray = @[NSStringFromClass([SYMainViewController class]),NSStringFromClass([WSContactsViewController class]) ,NSStringFromClass([WSFindViewController class])];
     NSArray *titleArray = @[@"首页",@"咨询",@"我"];

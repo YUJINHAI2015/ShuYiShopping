@@ -26,6 +26,7 @@ PODS:
   - MBProgressHUD+BWMExtension (1.0.1):
     - MBProgressHUD (~> 0.9.1)
   - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.7.6):
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - MagicalRecord (~> 2.3)
   - MBProgressHUD+BWMExtension (~> 1.0)
   - MJExtension (~> 3.0)
+  - MJRefresh (~> 3.1)
   - SDCycleScrollView (~> 1.64)
   - SDWebImage (~> 3.7.1)
   - SMPageControl (~> 1.2)
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MBProgressHUD+BWMExtension: d0603a1c0b03ef74cae6a0986d63c0bdf34bedfe
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SMPageControl: 922892813001cfaf059e86e6801f46a967e9ee29
@@ -70,6 +73,6 @@ SPEC CHECKSUMS:
   UMengSocial: 48b67179c492a8cf7803fbb0438b8f55432e2fc1
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-PODFILE CHECKSUM: 1674af632beaad66052ae4710e9ce1b84ca80028
+PODFILE CHECKSUM: acd3ca9f46ad6b4c4264c5a6d00703c454d75d6e
 
 COCOAPODS: 1.0.1
