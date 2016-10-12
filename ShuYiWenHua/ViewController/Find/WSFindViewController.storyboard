@@ -28,46 +28,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-lH-jrk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UMS_User_profile_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SP-Uo-8rd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sy_person_placehold.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SP-Uo-8rd">
                                         <rect key="frame" x="147" y="60" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="NtA-Si-YaV"/>
                                             <constraint firstAttribute="width" constant="80" id="WNM-fL-43u"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击登录/注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcU-Ra-fds">
-                                        <rect key="frame" x="114" y="150" width="108" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sy_person_pen.png" translatesAutoresizingMaskIntoConstraints="NO" id="LRH-E5-weN">
+                                        <rect key="frame" x="225" y="155" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="KZU-rN-q0v"/>
-                                            <constraint firstAttribute="height" constant="21" id="Zr0-9W-k3Q"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="KZU-rN-q0v"/>
-                                                <exclude reference="Zr0-9W-k3Q"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LRH-E5-weN">
-                                        <rect key="frame" x="227" y="151" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="3pQ-f2-yia"/>
-                                            <constraint firstAttribute="height" constant="20" id="wob-iu-Ocl"/>
+                                            <constraint firstAttribute="height" constant="20" id="EXf-IP-OE5"/>
+                                            <constraint firstAttribute="width" constant="20" id="IZJ-lI-PIt"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7u-Bg-blm">
+                                        <rect key="frame" x="130" y="150" width="95" height="30"/>
+                                        <state key="normal" title="点击登录/注册">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2470588235" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.28627450980392155" green="0.45490196078431372" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="AcU-Ra-fds" firstAttribute="centerX" secondItem="cLl-lH-jrk" secondAttribute="centerX" constant="-20" id="BCl-oy-z2i"/>
-                                    <constraint firstItem="AcU-Ra-fds" firstAttribute="top" secondItem="8SP-Uo-8rd" secondAttribute="bottom" constant="10" id="HPM-pu-6Tg"/>
+                                    <constraint firstItem="LRH-E5-weN" firstAttribute="leading" secondItem="R7u-Bg-blm" secondAttribute="trailing" id="DA1-iK-u9D"/>
+                                    <constraint firstItem="R7u-Bg-blm" firstAttribute="centerX" secondItem="cLl-lH-jrk" secondAttribute="centerX" constant="-10" id="Kpv-hB-VtG"/>
+                                    <constraint firstItem="R7u-Bg-blm" firstAttribute="centerY" secondItem="LRH-E5-weN" secondAttribute="centerY" id="Nqa-t1-Qgs"/>
                                     <constraint firstAttribute="height" constant="200" id="Xpw-1v-gZa"/>
                                     <constraint firstItem="8SP-Uo-8rd" firstAttribute="centerX" secondItem="cLl-lH-jrk" secondAttribute="centerX" id="Yo7-iw-jon"/>
-                                    <constraint firstItem="LRH-E5-weN" firstAttribute="leading" secondItem="AcU-Ra-fds" secondAttribute="trailing" constant="5" id="ZqP-jf-Wcx"/>
-                                    <constraint firstItem="AcU-Ra-fds" firstAttribute="centerY" secondItem="LRH-E5-weN" secondAttribute="centerY" id="iGQ-8L-70k"/>
                                     <constraint firstItem="8SP-Uo-8rd" firstAttribute="centerY" secondItem="cLl-lH-jrk" secondAttribute="centerY" id="x15-oG-aGT"/>
+                                    <constraint firstItem="R7u-Bg-blm" firstAttribute="top" secondItem="8SP-Uo-8rd" secondAttribute="bottom" constant="10" id="xPf-8Y-cKs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -94,6 +84,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UMS_User_profile_default.png" width="75" height="75"/>
+        <image name="sy_person_pen.png" width="13" height="13"/>
+        <image name="sy_person_placehold.png" width="57" height="58"/>
     </resources>
 </document>

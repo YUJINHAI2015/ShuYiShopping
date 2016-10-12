@@ -1,24 +1,22 @@
 //
-//  WSContactsViewController.m
-//  框架
+//  SYCommunityViewController.m
+//  ShuYiWenHua
 //
-//  Created by shupengstar on 16/7/7.
-//  Copyright © 2016年 YJH. All rights reserved.
+//  Created by yiLian on 16/10/10.
+//  Copyright © 2016年 shuyi. All rights reserved.
 //
 
-#import "WSContactsViewController.h"
+#import "SYCommunityViewController.h"
 
-@interface WSContactsViewController ()
+@interface SYCommunityViewController ()
 
 @end
 
-@implementation WSContactsViewController
+@implementation SYCommunityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.NavLeftBtn.hidden = YES;
-
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

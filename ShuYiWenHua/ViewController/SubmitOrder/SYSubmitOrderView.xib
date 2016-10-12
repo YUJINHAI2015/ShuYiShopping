@@ -86,38 +86,24 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="1110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-aK-axt">
-                    <rect key="frame" x="8" y="170" width="20" height="20"/>
+                <button opaque="NO" tag="1110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-aK-axt">
+                    <rect key="frame" x="8" y="170" width="40" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Pmp-y4-0ZZ"/>
-                        <constraint firstAttribute="width" constant="20" id="XSI-og-wbf"/>
+                        <constraint firstAttribute="width" constant="40" id="XSI-og-wbf"/>
                     </constraints>
                     <state key="normal" image="ovalBtn.png"/>
-                    <state key="selected" image="select.png"/>
                     <connections>
                         <action selector="addressTypeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="fIZ-Ne-TH7"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-Yg-OKi">
-                    <rect key="frame" x="8" y="205" width="20" height="20"/>
+                <button opaque="NO" tag="1112" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-KS-LEi">
+                    <rect key="frame" x="8" y="240" width="40" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="3a8-SK-Lxi"/>
-                        <constraint firstAttribute="height" constant="20" id="9Qq-FF-tem"/>
-                    </constraints>
-                    <state key="normal" image="ovalBtn.png"/>
-                    <state key="selected" image="select.png"/>
-                    <connections>
-                        <action selector="addressTypeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="R8p-HJ-UYS"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-KS-LEi">
-                    <rect key="frame" x="8" y="240" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="7gE-zI-4K7"/>
+                        <constraint firstAttribute="width" constant="40" id="7gE-zI-4K7"/>
                         <constraint firstAttribute="height" constant="20" id="Lkg-GG-OMr"/>
                     </constraints>
                     <state key="normal" image="ovalBtn.png"/>
-                    <state key="selected" image="select.png"/>
                     <connections>
                         <action selector="addressTypeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UYj-P4-8CZ"/>
                     </connections>
@@ -154,7 +140,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="-31" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="58" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="56" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="请选择" image="downLowList.png" backgroundImage="textFieldBoder.png">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -183,7 +169,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="-31" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="58" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="56" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="请选择" image="downLowList.png" backgroundImage="textFieldBoder.png">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -195,7 +181,7 @@
                     <rect key="frame" x="177" y="267" width="84" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="-31" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="58" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="56" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="请选择" image="downLowList.png" backgroundImage="textFieldBoder.png">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -207,7 +193,7 @@
                     <rect key="frame" x="271" y="267" width="84" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="-31" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="58" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="56" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="请选择" image="downLowList.png" backgroundImage="textFieldBoder.png">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -255,7 +241,7 @@
                         <constraint firstAttribute="height" constant="26" id="xha-fq-u6P"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Za-ts-7Wz">
                     <rect key="frame" x="78" y="6" width="287" height="34"/>
@@ -267,6 +253,17 @@
                     <rect key="frame" x="10" y="97" width="355" height="30"/>
                     <connections>
                         <action selector="selectUserInfoAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="pD1-Ze-mlY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1111" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-Yg-OKi">
+                    <rect key="frame" x="8" y="205" width="40" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="3a8-SK-Lxi"/>
+                        <constraint firstAttribute="height" constant="20" id="9Qq-FF-tem"/>
+                    </constraints>
+                    <state key="normal" image="ovalBtn.png"/>
+                    <connections>
+                        <action selector="addressTypeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="R8p-HJ-UYS"/>
                     </connections>
                 </button>
             </subviews>
@@ -285,7 +282,7 @@
                 <constraint firstItem="l9S-0u-gsG" firstAttribute="centerY" secondItem="y35-T7-iPQ" secondAttribute="centerY" id="89R-bh-MmY"/>
                 <constraint firstAttribute="trailing" secondItem="pZf-K1-2fU" secondAttribute="trailing" id="8Fc-gd-Srl"/>
                 <constraint firstItem="M2n-DL-LGb" firstAttribute="centerY" secondItem="Wdf-E2-exP" secondAttribute="centerY" id="8zS-XK-Xnt"/>
-                <constraint firstItem="lsD-di-M7v" firstAttribute="leading" secondItem="Yrg-aK-axt" secondAttribute="trailing" constant="10" id="96v-62-W6h"/>
+                <constraint firstItem="lsD-di-M7v" firstAttribute="leading" secondItem="Yrg-aK-axt" secondAttribute="trailing" constant="-10" id="96v-62-W6h"/>
                 <constraint firstItem="pZf-K1-2fU" firstAttribute="top" secondItem="M2n-DL-LGb" secondAttribute="bottom" constant="11" id="9XI-9a-9bt"/>
                 <constraint firstAttribute="trailing" secondItem="X55-GV-bLh" secondAttribute="trailing" id="ANe-7i-d3N"/>
                 <constraint firstItem="emD-P4-piJ" firstAttribute="top" secondItem="wIW-Ww-c6s" secondAttribute="bottom" constant="15" id="BGJ-cJ-xIa"/>
@@ -356,19 +353,21 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="assignAddressBtn" destination="Woa-KS-LEi" id="Vey-jZ-61J"/>
                 <outlet property="detailAddressField" destination="DvY-FF-CCm" id="Arf-Vg-uIs"/>
+                <outlet property="getBySelfBtn" destination="9Fe-Yg-OKi" id="kos-r1-znA"/>
                 <outlet property="nameField" destination="GtO-Jx-k2S" id="UGP-gB-nlB"/>
                 <outlet property="phoneField" destination="ZyC-Mm-QKr" id="Jn3-u9-rDg"/>
                 <outlet property="remarkField" destination="NYW-gC-1hO" id="zdV-Xb-26j"/>
+                <outlet property="sendServerCenterBtn" destination="Yrg-aK-axt" id="7xP-hs-m7Q"/>
                 <outlet property="sendTypeLbl" destination="Wdf-E2-exP" id="Zy6-Ov-7E1"/>
             </connections>
-            <point key="canvasLocation" x="435.5" y="350"/>
+            <point key="canvasLocation" x="548.5" y="351"/>
         </view>
     </objects>
     <resources>
         <image name="downLowList.png" width="15" height="15"/>
         <image name="ovalBtn.png" width="20" height="20"/>
-        <image name="select.png" width="20" height="20"/>
         <image name="textFieldBoder.png" width="149" height="20"/>
         <image name="右向箭头.png" width="11" height="20"/>
     </resources>

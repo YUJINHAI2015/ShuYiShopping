@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageLeft" rowHeight="147" id="KGk-i7-Jjw" customClass="SYMessageLeftTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="146"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数易文化2016年上半年度表彰大会将于本月21日在长春召开" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdy-mU-suk">
+                        <rect key="frame" x="8" y="11" width="304" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="本次褒奖大会将会为2016年上半年度新品推广优胜者，数易首届优秀讲师评选活动的前三名，韩国豪华游轮活动的达标者予以表彰。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-HI-rpj">
+                        <rect key="frame" x="8" y="57" width="304" height="51"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2016-6-5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIn-l1-iiR">
+                        <rect key="frame" x="249" y="119" width="63" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huO-1i-HB6">
+                        <rect key="frame" x="0.0" y="141" width="320" height="5"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="5" id="665-M7-hJe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kdy-mU-suk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0Jy-dn-cOt"/>
+                    <constraint firstItem="kdy-mU-suk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Mp6-ou-vHw"/>
+                    <constraint firstItem="e1a-HI-rpj" firstAttribute="top" secondItem="kdy-mU-suk" secondAttribute="bottom" constant="5" id="Rtb-MO-eI7"/>
+                    <constraint firstItem="EIn-l1-iiR" firstAttribute="top" secondItem="e1a-HI-rpj" secondAttribute="bottom" constant="11" id="U6y-wl-e1k"/>
+                    <constraint firstAttribute="bottom" secondItem="huO-1i-HB6" secondAttribute="bottom" id="Vi4-lV-onV"/>
+                    <constraint firstItem="huO-1i-HB6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="h0e-LL-VOf"/>
+                    <constraint firstItem="kdy-mU-suk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="iql-om-iZF"/>
+                    <constraint firstItem="e1a-HI-rpj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="sdk-TA-awu"/>
+                    <constraint firstItem="EIn-l1-iiR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="tR1-5e-izf"/>
+                    <constraint firstAttribute="trailing" secondItem="huO-1i-HB6" secondAttribute="trailing" id="wzw-m8-Ygc"/>
+                    <constraint firstItem="e1a-HI-rpj" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xib-EJ-ub2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="e1a-HI-rpj" id="gVU-YP-Yy8"/>
+                <outlet property="timeLabel" destination="EIn-l1-iiR" id="shw-6h-urv"/>
+                <outlet property="titleLabel" destination="kdy-mU-suk" id="wH2-kI-gEB"/>
+            </connections>
+            <point key="canvasLocation" x="628" y="252.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -8,6 +8,6 @@
 
 #import "SYBaseViewController.h"
 
-@interface WSContactsViewController : SYBaseViewController
+@interface SYMessageViewController : SYBaseViewController
 
 @end

@@ -39,8 +39,8 @@ static NSString *ID = @"cell";
     NSLog(@"offset======%f",offset);
     
     CGFloat h = oriHeightset - offset;
-    if (h < 64) {
-        h = 64;
+    if (h < 80) {
+        h = 80;
     }
     self.heightConstr.constant = h;
 }

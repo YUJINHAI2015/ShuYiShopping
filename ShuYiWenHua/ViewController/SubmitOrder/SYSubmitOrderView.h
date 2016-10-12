@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SYSubmitOrderView : UIView
+@property (nonatomic,copy) void(^submitOrderAction)(NSInteger);
 
 @end
